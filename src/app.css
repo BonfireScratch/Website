@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-4xl sm:text-7xl font-bold;
+  }
+  
+  h2 {
+    @apply text-4xl sm:text-7xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-3xl sm:text-5xl font-semibold;
+  }
+  
+  p {
+    @apply text-xl font-normal;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+* {
+  cursor: none;
+}
+
+.inverted-text {
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  margin-bottom: -2vh
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes circle-in-top-right {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(150% at top right);
+  }
+}
+
+[transition-style="in:circle:top-right"] {
+  animation: circle-in-top-right 3s cubic-bezier(.25, 1, .30, 1) 0.5s both;
+}
