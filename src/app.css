@@ -4,15 +4,15 @@
 
 @layer base {
   h1 {
-    @apply text-4xl sm:text-7xl font-bold;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold;
   }
   
   h2 {
-    @apply text-4xl sm:text-7xl font-semibold;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold;
   }
   
   h3 {
-    @apply text-3xl sm:text-5xl font-semibold;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold;
   }
   
   p {
@@ -27,9 +27,87 @@
   cursor: none;
 }
 
+header::after, header::before {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+header::before {
+  right: 0;
+  bottom: -19;
+  height: 30em;
+  width: 30em;
+  border-radius: 30em;
+  background: linear-gradient(#3800e7, #8a15ff);
+  align-self: flex-end;
+  animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+}
+
+header::after {
+  top: 0;
+  left: 30;
+  height: 10em;
+  width: 10em;
+  border-radius: 10em;
+  background: linear-gradient(#3800e7, #8a15ff);
+  animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+}
+
+.container::before, .container::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.container::before {
+  top: -3em;
+  right: -3em;
+  width: 13em;
+  height: 13em;
+  opacity: 0.7;
+  border-radius: 13em;
+  background: linear-gradient(#15e0ff, #8a15ff);
+  animation: rotation 7s linear infinite;
+}
+
+.container::after {
+  bottom: -40em;
+  width: 40em;
+  height: 40em;
+  border-radius: 20em;
+  background: linear-gradient(#e300d8, #8a15ff);
+  animation: rotation 7s linear infinite;
+}
+
+.dotted-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.3;
+  animation: rotation 38s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .inverted-text {
-  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
-  margin-bottom: -2vh
+  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;;
+  margin-bottom: -2vh;
 }
 
 
@@ -56,18 +134,100 @@
 
 
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}
 
+@keyframes gradient-fade {
+  from {
+    transform: translate(10%, -10%) rotate(0deg);
+  }
 
+  to {
+    transform: translate(50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes gradient-fade-alt {
+  from {
+    transform: translate(-20%, 20%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-60%, 60%) rotate(360deg);
+  }
+}
 
 @keyframes circle-in-top-right {
   from {
     clip-path: circle(0%);
   }
+
   to {
     clip-path: circle(150% at top right);
   }
 }
 
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
 [transition-style="in:circle:top-right"] {
   animation: circle-in-top-right 3s cubic-bezier(.25, 1, .30, 1) 0.5s both;
+}
+
+[transition-style="fade-in-up"] {
+  animation: fade-in-up 1s cubic-bezier(.25, 1, .30, 1) 0.5s both;
+}
+
+[transition-style="fade-in-left"] {
+  animation: fade-in-left 1s cubic-bezier(.25, 1, .30, 1) 0.5s both;
+}
+
+[transition-style="fade-in-right"] {
+  animation: fade-in-right 1s cubic-bezier(.25, 1, .30, 1) 0.5s both;
 }

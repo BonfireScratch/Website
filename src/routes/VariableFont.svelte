@@ -7,7 +7,7 @@
 
 {#each letters as letter}
   {#if letter === ' '}
-    <span>{letter}</span>
+    <span class="select-none">{letter}</span>
   {:else}
     <VariableLetter>{letter}</VariableLetter>
   {/if}

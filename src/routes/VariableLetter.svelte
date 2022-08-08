@@ -2,7 +2,7 @@
   let animated = false;
 </script>
 
-<span class:text-animation="{animated === true}" on:mouseenter="{() => animated =  true}" on:animationend="{() => animated =  false}">
+<span class="select-none" class:text-animation="{animated === true}" on:mouseenter="{() => animated =  true}" on:animationend="{() => animated =  false}">
   <slot></slot>
 </span>
 

@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'background-blue': '#4d05e8',
-        'highlights-red': '#f14336'
+        'highlights-red': '#e300d8'
       },
       fontFamily: {
         sans: ['League Spartan', 'sans-serif']

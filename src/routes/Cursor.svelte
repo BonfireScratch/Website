@@ -9,7 +9,7 @@
   }
   
   export const handleMouseDown = () => {
-    cursor.style.setProperty('--cursor-size', '1.5'); 
+    cursor.style.setProperty('--cursor-size', '1.3'); 
   }
   
   export const handleMouseUp = () => {
@@ -29,6 +29,7 @@
     pointer-events: none;
     will-change: transform;
     transition: 0.3s transform cubic-bezier(0.39, 0.575, 0.565, 1);     
+    animation-delay: 0.8s;
   }
 
   @media (pointer: fine) {
@@ -42,7 +43,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 5px solid #f14336;
+    border: 5px solid #e300d8;
 
     -webkit-transform: scale(var(--cursor-size));
             transform: scale(var(--cursor-size));
