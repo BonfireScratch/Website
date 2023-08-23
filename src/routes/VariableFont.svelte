@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import { onMount } from 'svelte';
 	import VariableLetter from './VariableLetter.svelte';
 
 	export let text: string;
@@ -7,12 +6,6 @@
 	let font: any;
 
 	let letters = text.split('');
-
-	// onMount(() => {
-	// 	if (typing) {
-	// 		font.style.width = `${letters.length}ch`;
-	// 	}
-	// });
 </script>
 
 <div
