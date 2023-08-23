@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="4">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
@@ -9,4 +9,7 @@
 	<body class="overflow-hidden">
 		<div>%sveltekit.body%</div>
 	</body>
+	<script>
+		document.getElementsByTagName("HTML")[0].setAttribute('data-theme', `${Math.floor(Math.random() * 4) + 1}`)
+	</script>
 </html>

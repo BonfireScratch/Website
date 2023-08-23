@@ -4,13 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'background-blue': '#4d05e8',
-        'highlights-red': '#e300d8'
+        'background': 'var(--background)',
+        'highlights': 'var(--highlights)',
+        'background-analogous-1': 'var(--background-analogous-1)',
+        'background-analogous-2': '#var(--background-analogous-2)',
+        'secondary': 'var(--secondary)'
       },
       fontFamily: {
         sans: ['League Spartan', 'sans-serif']
       }
-    },
+    }
+
   },
   plugins: [],
 }

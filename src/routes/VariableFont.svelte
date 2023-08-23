@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	import VariableLetter from './VariableLetter.svelte';
 
 	export let text: string;
@@ -8,16 +8,17 @@
 
 	let letters = text.split('');
 
-	onMount(() => {
-		if (typing) {
-			font.style.width = `${letters.length}ch`;
-		}
-	});
+	// onMount(() => {
+	// 	if (typing) {
+	// 		font.style.width = `${letters.length}ch`;
+	// 	}
+	// });
 </script>
 
 <div
 	bind:this={font}
 	class={`${typing === true ? 'typing translate-y-2 md:translate-y-2.5 lg:translate-y-3' : ''}`}
+	style={`--length: ${letters.length}`}
 >
 	{#each letters as letter}
 		{#if letter === ' '}
@@ -40,12 +41,19 @@
 		overflow: hidden;
 		border-right: 3px solid;
 		font-family: 'Inconsolata', monospace;
-		animation: typing 0.3s steps(6), blink 0.5s step-end infinite alternate;
+		animation: typing 4.2s steps(6), blink 0.5s step-end infinite;
 	}
 
 	@keyframes typing {
-		from {
+		0%,
+		50%,
+		100% {
 			width: 0;
+		}
+
+		10%,
+		40% {
+			width: calc(var(--length) * 1ch);
 		}
 	}
 

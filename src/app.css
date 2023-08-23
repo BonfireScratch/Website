@@ -3,6 +3,38 @@
 @tailwind base;
 
 @layer base {
+  html[data-theme='1'] {
+    --background: #4d05e8;
+    --highlights: #e300d8;
+    --background-analogous-1: #BE05E8;
+    --background-analogous-2: #052FE8;
+    --secondary: #fff;
+  }
+
+  html[data-theme='2'] {
+    --background: #0d19a3;
+    --highlights: #15db95;
+    --background-analogous-1: #0805bf;
+    --background-analogous-2: #15db95;
+    --secondary: #fff;
+  }
+
+  html[data-theme='3'] {
+    --background: #16ffbd;
+    --highlights: #f070a1;
+    --background-analogous-1: #F070E1;
+    --background-analogous-2: #c34271;
+    --secondary: #000;
+  }
+
+  html[data-theme='4'] {
+    --background: #FEE715FF;
+    --highlights: #152CFE;
+    --background-analogous-1: #15A1FE;
+    --background-analogous-2: #7315FE;
+    --secondary: #101820FF;
+  }
+
   h1 {
     @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold;
   }
@@ -39,7 +71,7 @@ header::before {
   height: 30em;
   width: 30em;
   border-radius: 30em;
-  background: linear-gradient(#3800e7, #8a15ff);
+  background: linear-gradient(theme('colors.background-analogous-1'), theme('colors.highlights'));
   align-self: flex-end;
   animation: gradient-fade 8s ease-in-out 3s infinite alternate;
 }
@@ -50,7 +82,7 @@ header::after {
   height: 10em;
   width: 10em;
   border-radius: 10em;
-  background: linear-gradient(#3800e7, #8a15ff);
+  background: linear-gradient(theme('colors.background-analogous-1'), theme('colors.background-analogous-2'));
   animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
 }
 
@@ -67,7 +99,7 @@ header::after {
   height: 13em;
   opacity: 0.7;
   border-radius: 13em;
-  background: linear-gradient(#15e0ff, #8a15ff);
+  background: linear-gradient(theme('colors.background-analogous-1'), theme('colors.background'));
   animation: rotation 7s linear infinite;
 }
 
@@ -76,7 +108,7 @@ header::after {
   width: 40em;
   height: 40em;
   border-radius: 20em;
-  background: linear-gradient(#e300d8, #8a15ff);
+  background: linear-gradient(theme('colors.highlights'), theme('colors.background-analogous-2'));
   animation: rotation 7s linear infinite;
 }
 
@@ -89,7 +121,7 @@ header::after {
 }
 
 .inverted-text {
-  text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;;
+  text-shadow: 1px 0 0 theme('colors.secondary'), -1px 0 0 theme('colors.secondary'), 0 1px 0 theme('colors.secondary'), 0 -1px 0 theme('colors.secondary'), 1px 1px theme('colors.secondary'), -1px -1px 0 theme('colors.secondary'), 1px -1px 0 theme('colors.secondary'), -1px 1px 0 theme('colors.secondary');
   margin-bottom: -2vh;
 }
 

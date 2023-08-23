@@ -18,7 +18,7 @@
 	<title>Diogenis Siganos</title>
 </svelte:head>
 
-<div class="bg-highlights-red">
+<div class="bg-highlights">
 	<Cursor />
 	<main
 		transition-style="in:circle:top-right"
@@ -26,25 +26,25 @@
 		on:mousedown={handleMouseDown}
 		on:mouseup={handleMouseUp}
 	>
-		<header class="flex flex-row h-screen bg-background-blue">
+		<header class="flex flex-row h-screen bg-background">
 			<Sidebar />
 			<div class="container mx-auto relative h-max py-48">
 				<div transition-style="fade-in-left" class="hidden lg:block">
 					{#each outlineOpacities as opacity}
 						<h1
-							class={`${opacity} select-none text-center inverted-text text-background-blue sm:text-start`}
+							class={`${opacity} select-none text-center inverted-text text-background sm:text-start`}
 						>
 							DIOGENIS SIGANOS.
 						</h1>
 					{/each}
 				</div>
-				<h1 transition-style="fade-in-right" class="text-white text-center sm:text-start mb-4">
+				<h1 transition-style="fade-in-right" class="text-secondary text-center sm:text-start mb-4">
 					<VariableFont typing={false} text={'DIOGENIS SIGANOS.'} />
 				</h1>
 				<h2
 					transition-style="fade-in-up"
 					style={'animation-delay: 1s'}
-					class="text-center text-highlights-red sm:text-start mb-4"
+					class="text-center text-highlights sm:text-start mb-4"
 				>
 					<VariableFont typing={false} text={'I enjoy coding with'} />
 					{#each [languages[currentLanguage]] as language (currentLanguage)}
@@ -54,7 +54,7 @@
 				<p
 					transition-style="fade-in-up"
 					style="animation-delay: 1.3s"
-					class="text-white text-center mx-4 sm:mx-0 sm:text-start md:w-3/4 xl:w-1/2"
+					class="text-secondary text-center mx-4 sm:mx-0 sm:text-start md:w-3/4 xl:w-1/2"
 				>
 					I'm a high school student with an ardent interest in CS, mathematics and philosophy.
 					Currently, I'm focused on augmenting my web development and designing skillset.
